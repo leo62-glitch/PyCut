@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pycut"
+version = "0.1.0"
+description = "PyCut - a CapCut-style desktop video editor written in pure Python (PySide6 + FFmpeg)."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+dependencies = [
+    "PySide6>=6.6",
+    "numpy>=1.26",
+    "opencv-python>=4.9",
+]
+
+[project.optional-dependencies]
+interop = ["opentimelineio>=0.16"]
+captions = ["faster-whisper>=1.0"]
+dev = ["pytest>=8"]
+
+[project.scripts]
+pycut = "pycut.app:main"
+
+[tool.setuptools.packages.find]
+include = ["pycut*"]
+
+[tool.setuptools.package-data]
+pycut = ["resources/*.json", "resources/**/*", "i18n/*.json"]

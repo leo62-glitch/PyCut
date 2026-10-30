@@ -1,4 +1,4 @@
-# PyCut
+# PyCut (REA Claude Fable)
 
 Éditeur vidéo de bureau inspiré de CapCut, 100 % Python (PySide6 + OpenCV). Projet indépendant, sans lien avec CapCut/ByteDance.
 

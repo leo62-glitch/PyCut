@@ -1,35 +1,35 @@
 # PyCut (REA Claude Fable)
 
-Éditeur vidéo de bureau inspiré de CapCut, 100 % Python (PySide6 + OpenCV). Projet indépendant, sans lien avec CapCut/ByteDance.
+A desktop video editor inspired by CapCut, written in 100% Python (PySide6 + OpenCV). Independent project, not affiliated with CapCut/ByteDance.
 
-## Lancer (Windows)
+## Run (Windows)
 ```powershell
 cd PyCut
 pip install PySide6 numpy opencv-python
 python run.py
 ```
-Optionnel : installer **ffmpeg** (dans le PATH) pour avoir l'audio à l'export et des infos média plus précises.
-`python run.py "<dossier projet PyCut ou brouillon CapCut>"` ouvre directement un projet.
+Optional: install **ffmpeg** (in the PATH) to get audio in exports and more accurate media info.
+`python run.py "<PyCut project folder or CapCut draft>"` opens a project directly.
 
-## Ce qui fonctionne
-- Accueil : création de projet, liste de tes projets PyCut **et de tes brouillons CapCut** (lecture seule, ouverture = copie importée)
-- Éditeur : médiathèque (import, glisser-déposer), lecteur (aperçu image par image, lecture), timeline complète
-  (déplacer, rogner, diviser, dupliquer, copier/coller, superpositions, pistes texte/audio, aimantation, zoom, repères),
-  inspecteur (position, échelle, rotation, opacité, volume, fondus, vitesse, inversion, réglages couleur, texte)
-- Annuler/Rétablir, enregistrement automatique, export vidéo MP4, export/import des brouillons CapCut
-- Raccourcis : Espace, Ctrl+Z / Ctrl+Maj+Z, Ctrl+B (diviser), Suppr, Ctrl+C/V/D, ←/→ (image), Home/End, Q/W (rogner), S (aimant), M (repère), Ctrl+E, Ctrl+S
+## What works
+- Home: project creation, list of your PyCut projects **and of your CapCut drafts** (read-only, opening = imported copy)
+- Editor: media library (import, drag and drop), player (frame-by-frame preview, playback), full timeline
+  (move, trim, split, duplicate, copy/paste, overlays, text/audio tracks, snapping, zoom, markers),
+  inspector (position, scale, rotation, opacity, volume, fades, speed, reverse, colour adjustments, text)
+- Undo/Redo, autosave, MP4 video export, CapCut draft export/import
+- Shortcuts: Space, Ctrl+Z / Ctrl+Shift+Z, Ctrl+B (split), Delete, Ctrl+C/V/D, ←/→ (frame), Home/End, Q/W (trim), S (snap), M (marker), Ctrl+E, Ctrl+S
 
-## Pas encore (affiché « bientôt disponible »)
-Transitions, effets, filtres, masques, chroma, stickers, légendes automatiques, animations, fonctions IA, enregistrement micro,
-lecture du son dans l'aperçu (l'audio est mixé à l'export seulement), formes d'onde réelles.
+## Not yet (shown as "coming soon")
+Transitions, effects, filters, masks, chroma key, stickers, auto captions, animations, AI features, microphone recording,
+audio playback in the preview (audio is only mixed at export), real waveforms.
 
-## Brouillons CapCut
+## CapCut drafts
 ```
-python tools/capcut_check.py            # teste l'import/export sur TOUS tes brouillons (lecture seule)
-python tools/capcut_check.py "<dossier du brouillon>"
+python tools/capcut_check.py            # tests import/export on ALL your drafts (read-only)
+python tools/capcut_check.py "<draft folder>"
 ```
-Menu → Fichier → *Exporter vers un brouillon CapCut…* (ferme CapCut avant). Les éléments du store CapCut (transitions, effets,
-masques…) sont conservés tels quels à l'import mais ne peuvent pas être créés depuis PyCut ; ils sont signalés à l'export.
+Menu → File → *Export to a CapCut draft…* (close CapCut first). CapCut store items (transitions, effects,
+masks…) are preserved as-is on import but cannot be created from PyCut; they are reported on export.
 
 ## Tests
-`pip install pytest && python -m pytest -q` (23 tests, dont des tests d'interface en mode offscreen)
+`pip install pytest && python -m pytest -q` (23 tests, including offscreen UI tests)
